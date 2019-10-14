@@ -1,0 +1,20 @@
+samLogsamLog1571024611821 - samLog
+1571024625652 - function test triggered.
+1571024625653 - post value received:{
+	"Name": "Samsuri abdullah",
+	"Phone":"0166602559"
+}
+1571024665097 - function test triggered.
+1571024665097 - post value received:{
+	"Name": "Suraya Hani",
+	"Phone":"0166602550"
+}
+2019-10-14-11-49-31 - samLog
+2019-10-14-11:50:12 - samLog
+2043 11:51:25 - samLog
+2019-10-14 11:52:5 - samLog
+2019-10-14 11:52:33 - function test triggered.
+2019-10-14 11:52:33 - post value received:{
+	"Name": "Suraya Hani",
+	"Phone":"0166602550"
+}
