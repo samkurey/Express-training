@@ -1,17 +1,32 @@
-name: CI/CD Pipeline
+name: Node.js CI
 
 on:
   push:
-    branches:
-      - main # This workflow runs when a commit is pushed to the main branch
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # The job runs on a fresh Ubuntu virtual machine
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4 # Step 1: Check out your repository code
-      - name: Install dependencies and run tests
-        run: | # Step 2: Run build and test commands (adjust for your project)
-          npm install 
-          npm test
-          node index.js
+    - name: Checkout source code
+      uses: [actions/checkout@v4](https://github.com)
+
+    - name: Setup Node.js environment
+      uses: [actions/setup-node@v4](https://github.com)
+      with:
+        node-version: '22' # Specify your Node.js version
+        cache: 'npm' # Caches dependencies for faster subsequent runs
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run lint checks
+      # Replace 'npm run lint' with your actual lint command
+      run: npm run index 
+
+    - name: Run test cases
+      # Replace 'npm test' with your actual test command
+      run: npm test
