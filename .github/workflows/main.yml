@@ -1,0 +1,16 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main # This workflow runs when a commit is pushed to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # The job runs on a fresh Ubuntu virtual machine
+    steps:
+      - uses: actions/checkout@v4 # Step 1: Check out your repository code
+      - name: Install dependencies and run tests
+        run: | # Step 2: Run build and test commands (adjust for your project)
+          npm install 
+          npm test
