@@ -68,18 +68,19 @@ function writeLog(messageLog)
 //======================================================================================
 app.get('/', (req, res) => res.send('Express server running!'))
 
-// GET method route
-app.get('/test', function (req, res) {
-    var value = req.body;
+// GET method route http://localhost:3001/test?nama=samsuri
+app.get('/test', function (req, res) {	
+    var value = req.query.nama;
+	writeLog('function test GET triggered. - ' + value)
     res.send('GET request to the homepage:' + value)
   })
   
-  // POST method route
+  // POST method route {"Name": "Suraya Hani", "Phone":"0166602550"}
   app.post('/test', function (req, res) {
     //res.send(req.body)
     var value = req.body;    
     
-    writeLog('function test triggered.')
+    writeLog('function test POST triggered. -' + value)
     //value = value + " Received";
     //res.json([{Result: value}]);  
     let receivedBuff = JSON.parse(value); 
@@ -91,7 +92,7 @@ app.get('/test', function (req, res) {
 
   app.get('/test1/name', function (req, res) {
     var value = req.body;
-    res.send('GET request to the homepage:' + req.params.name)
+    res.send('GET request to the homepage:' + req.query.name)
   })
 
 
