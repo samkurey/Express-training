@@ -2,24 +2,15 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source code
-      uses: [actions/checkout@v4](https://github.com)
-
-    - name: Setup Node.js environment
-      uses: [actions/setup-node@v4](https://github.com)
-      with:
-        node-version: '22' # Specify your Node.js version
-        cache: 'npm' # Caches dependencies for faster subsequent runs
-
     - name: Install dependencies
       run: npm install
 
